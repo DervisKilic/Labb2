@@ -30,24 +30,20 @@
     
     self.answersArray = [NSMutableArray arrayWithObjects: [self.model getData][1], [self.model getData][2], [self.model getData][3], [self.model getData][4], nil];
     
-  
-        for (NSUInteger i = [self.answersArray count]; i > 1; i--) [self.answersArray exchangeObjectAtIndex:i - 1 withObjectAtIndex:arc4random_uniform((u_int32_t)i)];
-        
-        self.getQuestion.text = [self.model getData][0];
-        [self.answ1 setTitle:self.answersArray[0] forState:UIControlStateNormal];
-        [self.answ2 setTitle:self.answersArray[1] forState:UIControlStateNormal];
-        [self.answ3 setTitle:self.answersArray[2] forState:UIControlStateNormal];
-        [self.answ4 setTitle:self.answersArray[3] forState:UIControlStateNormal];
+    for (NSUInteger i = [self.answersArray count]; i > 1; i--) [self.answersArray exchangeObjectAtIndex:i - 1 withObjectAtIndex:arc4random_uniform((u_int32_t)i)];
+    
+    self.getQuestion.text = [self.model getData][0];
+    [self.answ1 setTitle:self.answersArray[0] forState:UIControlStateNormal];
+    [self.answ2 setTitle:self.answersArray[1] forState:UIControlStateNormal];
+    [self.answ3 setTitle:self.answersArray[2] forState:UIControlStateNormal];
+    [self.answ4 setTitle:self.answersArray[3] forState:UIControlStateNormal];
     
     self.answ1.userInteractionEnabled = YES;
     self.answ2.userInteractionEnabled = YES;
     self.answ3.userInteractionEnabled = YES;
     self.answ4.userInteractionEnabled = YES;
-    self.rightWrong.text = @"";
-    
-    
-     
-    
+    self.nextQuestion.userInteractionEnabled = NO;
+    self.rightWrong.text = @"";    
 }
 - (IBAction)checkAnswer:(UIButton *)sender {
     
@@ -58,7 +54,7 @@
     }else{
         self.rightWrong.text = @"Wrong!";
     }
-    
+    self.nextQuestion.userInteractionEnabled = YES;
     self.answ1.userInteractionEnabled = NO;
     self.answ2.userInteractionEnabled = NO;
     self.answ3.userInteractionEnabled = NO;
@@ -83,6 +79,8 @@
 }
 
 -(void)halfTime{
+    self.getQuestion.text = [NSString stringWithFormat:@"Correct answers: %d Wrong answers: %d", self.nrCorrectAnswers, [self.model gameRound] - self.nrCorrectAnswers];
+    
     self.nextQuestion.hidden = YES;
     self.answ1.hidden = YES;
     self.answ2.hidden = YES;
@@ -92,24 +90,16 @@
     self.continueButton.hidden = NO;
     [self.continueButton setTitle: @"Continue" forState:UIControlStateNormal];
     
-    
-    self.getQuestion.text = [NSString stringWithFormat:@"Correct answers: %d Wrong answers: %d", self.nrCorrectAnswers, [self.model gameRound]];
-    
-        if(([self.model gameRound] == 10)){
-        self.nextQuestion.hidden = YES;
-        self.answ1.hidden = YES;
-        self.answ2.hidden = YES;
-        self.answ3.hidden = YES;
-        self.answ4.hidden = YES;
-        self.rightWrong.hidden = YES;
-        self.continueButton.hidden = NO;
-        [self.continueButton setTitle: @"Play again" forState:UIControlStateNormal];
+    if(([self.model gameRound] == 10)){
+    self.nextQuestion.hidden = YES;
+    self.answ1.hidden = YES;
+    self.answ2.hidden = YES;
+    self.answ3.hidden = YES;
+    self.answ4.hidden = YES;
+    self.rightWrong.hidden = YES;
+    self.continueButton.hidden = NO;
+    [self.continueButton setTitle: @"Play again" forState:UIControlStateNormal];
     }
-    
-    
-    
-    
-    
 }
 - (IBAction)continueQuiz:(UIButton *)sender {
     if(([self.model gameRound] == 5)){
@@ -137,7 +127,5 @@
         self.nrCorrectAnswers = 0;
     }
 }
-
-
 
 @end
