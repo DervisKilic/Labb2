@@ -13,6 +13,8 @@
 		E9586EE51E2E15B1006A6306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9586EE31E2E15B1006A6306 /* Main.storyboard */; };
 		E9586EE71E2E15B1006A6306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9586EE61E2E15B1006A6306 /* Assets.xcassets */; };
 		E9586EEA1E2E15B1006A6306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9586EE81E2E15B1006A6306 /* LaunchScreen.storyboard */; };
+		E9586F211E2E4347006A6306 /* GameLogicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9586F201E2E4347006A6306 /* GameLogicModel.m */; };
+		E9586F271E2E5E23006A6306 /* GameScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = E9586F261E2E5E23006A6306 /* GameScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		E9586EE61E2E15B1006A6306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9586EE91E2E15B1006A6306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9586EEB1E2E15B1006A6306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9586F1F1E2E4347006A6306 /* GameLogicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLogicModel.h; sourceTree = "<group>"; };
+		E9586F201E2E4347006A6306 /* GameLogicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLogicModel.m; sourceTree = "<group>"; };
+		E9586F251E2E5E23006A6306 /* GameScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScreen.h; sourceTree = "<group>"; };
+		E9586F261E2E5E23006A6306 /* GameScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +68,15 @@
 				E9586EDE1E2E15B1006A6306 /* AppDelegate.m */,
 				E9586EE01E2E15B1006A6306 /* ViewController.h */,
 				E9586EE11E2E15B1006A6306 /* ViewController.m */,
+				E9586F251E2E5E23006A6306 /* GameScreen.h */,
+				E9586F261E2E5E23006A6306 /* GameScreen.m */,
 				E9586EE31E2E15B1006A6306 /* Main.storyboard */,
 				E9586EE61E2E15B1006A6306 /* Assets.xcassets */,
 				E9586EE81E2E15B1006A6306 /* LaunchScreen.storyboard */,
 				E9586EEB1E2E15B1006A6306 /* Info.plist */,
 				E9586EDA1E2E15B1006A6306 /* Supporting Files */,
+				E9586F1F1E2E4347006A6306 /* GameLogicModel.h */,
+				E9586F201E2E4347006A6306 /* GameLogicModel.m */,
 			);
 			path = Labb2;
 			sourceTree = "<group>";
@@ -151,8 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9586F211E2E4347006A6306 /* GameLogicModel.m in Sources */,
 				E9586EE21E2E15B1006A6306 /* ViewController.m in Sources */,
 				E9586EDF1E2E15B1006A6306 /* AppDelegate.m in Sources */,
+				E9586F271E2E5E23006A6306 /* GameScreen.m in Sources */,
 				E9586EDC1E2E15B1006A6306 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
