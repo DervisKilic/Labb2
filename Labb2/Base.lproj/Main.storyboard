@@ -61,7 +61,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fråga 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWO-O1-b8G">
                                 <rect key="frame" x="16" y="45" width="288" height="137"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -132,6 +132,21 @@
                                     <action selector="generateQuestion:" destination="dHT-EQ-qZL" eventType="touchUpInside" id="40I-A2-Gnf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la2-zN-hzr">
+                                <rect key="frame" x="16" y="491" width="288" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueQuiz:" destination="dHT-EQ-qZL" eventType="touchUpInside" id="JLi-fj-r1a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -140,7 +155,9 @@
                         <outlet property="answ2" destination="8FD-Ls-1QI" id="mbW-Ou-YOf"/>
                         <outlet property="answ3" destination="gWR-Xl-q2L" id="goi-Gm-Xpc"/>
                         <outlet property="answ4" destination="dMX-ua-YXJ" id="qUZ-6k-bCZ"/>
+                        <outlet property="continueButton" destination="la2-zN-hzr" id="SJR-d0-ubg"/>
                         <outlet property="getQuestion" destination="QWO-O1-b8G" id="GwX-ew-bFt"/>
+                        <outlet property="nextQuestion" destination="uFk-ca-AWH" id="eVX-B8-aHz"/>
                         <outlet property="rightWrong" destination="zl1-Ee-QYZ" id="RV0-5S-juB"/>
                     </connections>
                 </viewController>

@@ -28,6 +28,7 @@
 @property (nonatomic) NSString *answ2;
 @property (nonatomic) NSString *answ3;
 @property (nonatomic) NSString *answ4;
+@property (nonatomic) int round;
 
 @end
 
@@ -37,7 +38,7 @@
 -(void) setupData{
     
     if(self.questions == nil){
-    
+        self.round = 0;
 
     self.questionsArray1 =[NSMutableArray arrayWithObjects:@"I vilken stad i Sverige luktar det alltid fisk?", @"Göteborg", @"Flen", @"Malmö", @"Karlstad", nil];
     self.questionsArray2 = [NSMutableArray arrayWithObjects:@"Fråga2", @"svar21", @"svar22", @"svar23", @"svar24",nil];
@@ -67,11 +68,19 @@
 
     self.randomQuestion = [NSMutableArray arrayWithObjects:self.question, self.answ1, self.answ2, self.answ3, self.answ4, nil];
     [self.questions removeObjectAtIndex:randomize];
+    self.round++;
     
 }
 -(NSArray*)getData{
-    
     return self.randomQuestion;
+}
+
+-(int)gameRound{
+    return self.round;
+}
+
+-(void)newGame{
+    self.questions = nil;
 }
 
 

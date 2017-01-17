@@ -16,7 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *answ2;
 @property (weak, nonatomic) IBOutlet UIButton *answ3;
 @property (weak, nonatomic) IBOutlet UIButton *answ4;
+@property (weak, nonatomic) IBOutlet UIButton *continueButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextQuestion;
 @property (nonatomic) NSMutableArray *answersArray;
+@property (nonatomic) int nrCorrectAnswers;
 @property (weak, nonatomic) IBOutlet UILabel *rightWrong;
 
 @end
@@ -42,6 +45,7 @@
     self.answ4.userInteractionEnabled = YES;
     self.rightWrong.text = @"";
     
+    
      
     
 }
@@ -49,6 +53,7 @@
     
     if ([sender.currentTitle isEqualToString: [self.model getData][1]]) {
         self.rightWrong.text = @"Correct!";
+        self.nrCorrectAnswers++;
         
     }else{
         self.rightWrong.text = @"Wrong!";
@@ -58,16 +63,79 @@
     self.answ2.userInteractionEnabled = NO;
     self.answ3.userInteractionEnabled = NO;
     self.answ4.userInteractionEnabled = NO;
+    
+    if([self.model gameRound] == 5){
+        [self halfTime];
+    }else if([self.model gameRound] == 10){
+        [self halfTime];
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.model = [[GameLogicModel alloc] init];
+    self.continueButton.hidden = YES;
     [self generateQuestion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+-(void)halfTime{
+    self.nextQuestion.hidden = YES;
+    self.answ1.hidden = YES;
+    self.answ2.hidden = YES;
+    self.answ3.hidden = YES;
+    self.answ4.hidden = YES;
+    self.rightWrong.hidden = YES;
+    self.continueButton.hidden = NO;
+    [self.continueButton setTitle: @"Continue" forState:UIControlStateNormal];
+    
+    
+    self.getQuestion.text = [NSString stringWithFormat:@"Correct answers: %d Wrong answers: %d", self.nrCorrectAnswers, [self.model gameRound]];
+    
+        if(([self.model gameRound] == 10)){
+        self.nextQuestion.hidden = YES;
+        self.answ1.hidden = YES;
+        self.answ2.hidden = YES;
+        self.answ3.hidden = YES;
+        self.answ4.hidden = YES;
+        self.rightWrong.hidden = YES;
+        self.continueButton.hidden = NO;
+        [self.continueButton setTitle: @"Play again" forState:UIControlStateNormal];
+    }
+    
+    
+    
+    
+    
+}
+- (IBAction)continueQuiz:(UIButton *)sender {
+    if(([self.model gameRound] == 5)){
+    self.nextQuestion.hidden = NO;
+    self.answ1.hidden = NO;
+    self.answ2.hidden = NO;
+    self.answ3.hidden = NO;
+    self.answ4.hidden = NO;
+    self.rightWrong.hidden = NO;
+    self.continueButton.hidden = YES;
+    self.nextQuestion.hidden = NO;
+    [self generateQuestion:nil];
+   
+    }else if(([self.model gameRound] == 10)){
+        [self.model newGame];
+        [self generateQuestion:nil];
+        self.nextQuestion.hidden = NO;
+        self.answ1.hidden = NO;
+        self.answ2.hidden = NO;
+        self.answ3.hidden = NO;
+        self.answ4.hidden = NO;
+        self.rightWrong.hidden = NO;
+        self.nextQuestion.hidden = NO;
+        self.continueButton.hidden = YES;
+        self.nrCorrectAnswers = 0;
+    }
 }
 
 

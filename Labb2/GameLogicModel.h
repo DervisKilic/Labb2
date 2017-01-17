@@ -11,6 +11,8 @@
 @interface GameLogicModel : NSObject
 
 -(NSArray*)getData;
--(void) setupData;
+-(void)setupData;
+-(int)gameRound;
+-(void)newGame;
 
 @end
