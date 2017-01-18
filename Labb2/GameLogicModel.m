@@ -39,15 +39,15 @@
     if(self.questions == nil){
         self.round = 0;
         self.questionsArray1 =[NSMutableArray arrayWithObjects:@"I vilken stad i Sverige luktar det alltid fisk?", @"Göteborg", @"Flen", @"Malmö", @"Karlstad", nil];
-        self.questionsArray2 = [NSMutableArray arrayWithObjects:@"Fråga2", @"svar21", @"svar22", @"svar23", @"svar24",nil];
-        self.questionsArray3 = [NSMutableArray arrayWithObjects:@"Fråga3", @"svar31", @"svar32", @"svar33", @"svar34",nil];
-        self.questionsArray4 = [NSMutableArray arrayWithObjects:@"Fråga4", @"svar41", @"svar42", @"svar43", @"svar44",nil];
-        self.questionsArray5 = [NSMutableArray arrayWithObjects:@"Fråga5", @"svar51", @"svar52", @"svar53", @"svar54",nil];
-        self.questionsArray6 = [NSMutableArray arrayWithObjects:@"Fråga6", @"svar61", @"svar62", @"svar63", @"svar64",nil];
-        self.questionsArray7 = [NSMutableArray arrayWithObjects:@"Fråga7", @"svar71", @"svar72", @"svar73", @"svar74",nil];
-        self.questionsArray8 = [NSMutableArray arrayWithObjects:@"Fråga8", @"svar81", @"svar82", @"svar83", @"svar84",nil];
-        self.questionsArray9 = [NSMutableArray arrayWithObjects:@"Fråga9", @"svar91", @"svar92", @"svar93", @"svar94",nil];
-        self.questionsArray10 = [NSMutableArray arrayWithObjects:@"Fråga10", @"svar101", @"svar102", @"svar103", @"svar104",nil];
+        self.questionsArray2 = [NSMutableArray arrayWithObjects:@"Vilken färg var Napoleons vita häst?", @"Vit", @"Svart", @"Blå", @"Grön",nil];
+        self.questionsArray3 = [NSMutableArray arrayWithObjects:@"Fem myror är fler än fyra ...?", @"Elefanter", @"Katter", @"Stövlar", @"Burkar",nil];
+        self.questionsArray4 = [NSMutableArray arrayWithObjects:@"I vilken miljö trivs fiskar bäst i?", @"Vatten", @"Vakum", @"Soffan", @"Nordstan",nil];
+        self.questionsArray5 = [NSMutableArray arrayWithObjects:@"Vad heter Super Marios bror?", @"Luigi", @"Stefan", @"Göran", @"Britt-Marie",nil];
+        self.questionsArray6 = [NSMutableArray arrayWithObjects:@"Var bor det flest människor", @"Jorden", @"Solen", @"Varberg", @"Avenyn",nil];
+        self.questionsArray7 = [NSMutableArray arrayWithObjects:@"Om klockan är 12:00 vad är den då om 5 minuter?", @"12:05", @"12:02", @"14:48", @"25:32",nil];
+        self.questionsArray8 = [NSMutableArray arrayWithObjects:@"Hitta det avvikande svaret", @"Mjukost", @"Groda", @"Hund", @"Lemur",nil];
+        self.questionsArray9 = [NSMutableArray arrayWithObjects:@"Vad innehåller inte kött?", @"Hammare", @"Skinka", @"Biff", @"Kött",nil];
+        self.questionsArray10 = [NSMutableArray arrayWithObjects:@"Hur många centimeter är 1 meter", @"100", @"2", @"Bulle", @"14,2",nil];
         
         self.questions = [NSMutableArray arrayWithObjects:self.questionsArray1, self.questionsArray2, self.questionsArray3, self.questionsArray4, self.questionsArray5, self.questionsArray6, self.questionsArray7, self.questionsArray8, self.questionsArray9, self.questionsArray10, nil];
     }
