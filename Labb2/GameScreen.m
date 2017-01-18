@@ -32,11 +32,13 @@
     
     for (NSUInteger i = [self.answersArray count]; i > 1; i--) [self.answersArray exchangeObjectAtIndex:i - 1 withObjectAtIndex:arc4random_uniform((u_int32_t)i)];
     
+    
     self.getQuestion.text = [self.model getData][0];
     [self.answ1 setTitle:self.answersArray[0] forState:UIControlStateNormal];
     [self.answ2 setTitle:self.answersArray[1] forState:UIControlStateNormal];
     [self.answ3 setTitle:self.answersArray[2] forState:UIControlStateNormal];
     [self.answ4 setTitle:self.answersArray[3] forState:UIControlStateNormal];
+    
     
     self.answ1.userInteractionEnabled = YES;
     self.answ2.userInteractionEnabled = YES;
@@ -75,9 +77,9 @@
     self.answ4.layer.cornerRadius = 10;
     self.continueButton.layer.cornerRadius = 10;
     self.nextQuestion.layer.cornerRadius = 10;
+    self.continueButton.hidden = YES;
     
     self.model = [[GameLogicModel alloc] init];
-    self.continueButton.hidden = YES;
     [self generateQuestion:nil];
 }
 
