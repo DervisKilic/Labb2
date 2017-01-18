@@ -14,7 +14,7 @@
 
 @property (nonatomic) int round;
 @property (nonatomic) int randomQuestion;
-@property (nonatomic) NSMutableArray *dictionaryKeys;
+@property (nonatomic) NSMutableArray *dictionaryValues;
 @property (nonatomic) NSArray *question;
 
 @end
@@ -48,12 +48,12 @@
                              @"q10": @[@"Hur många centimeter är 1 meter?",  @"100", @"2", @"Bulle", @"14,2"]
                             };
 
-    self.dictionaryKeys = [NSMutableArray arrayWithArray:[self.questionsDictionary allValues]];
+    self.dictionaryValues = [NSMutableArray arrayWithArray:[self.questionsDictionary allValues]];
     }
     
-    self.randomQuestion = arc4random() % (self.dictionaryKeys.count);
-    self.question = [self.dictionaryKeys objectAtIndex:self.randomQuestion];
-    [self.dictionaryKeys removeObjectAtIndex:self.randomQuestion];
+    self.randomQuestion = arc4random() % (self.dictionaryValues.count);
+    self.question = [self.dictionaryValues objectAtIndex:self.randomQuestion];
+    [self.dictionaryValues removeObjectAtIndex:self.randomQuestion];
     
     self.round++;
 
