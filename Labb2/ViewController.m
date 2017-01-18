@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
 
 @end
 
@@ -16,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.playButton.layer.cornerRadius = 10;
 }
 
 - (void)didReceiveMemoryWarning {

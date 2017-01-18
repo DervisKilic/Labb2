@@ -20,6 +20,7 @@
 @property (nonatomic) NSMutableArray *questionsArray8;
 @property (nonatomic) NSMutableArray *questionsArray9;
 @property (nonatomic) NSMutableArray *questionsArray10;
+
 @property (nonatomic) NSMutableArray *questions;
 @property (nonatomic) NSMutableArray *randomQuestion;
 
@@ -48,6 +49,7 @@
         self.questionsArray8 = [NSMutableArray arrayWithObjects:@"Hitta det avvikande svaret", @"Mjukost", @"Groda", @"Hund", @"Lemur",nil];
         self.questionsArray9 = [NSMutableArray arrayWithObjects:@"Vad innehåller inte kött?", @"Hammare", @"Skinka", @"Biff", @"Kött",nil];
         self.questionsArray10 = [NSMutableArray arrayWithObjects:@"Hur många centimeter är 1 meter", @"100", @"2", @"Bulle", @"14,2",nil];
+        
         
         self.questions = [NSMutableArray arrayWithObjects:self.questionsArray1, self.questionsArray2, self.questionsArray3, self.questionsArray4, self.questionsArray5, self.questionsArray6, self.questionsArray7, self.questionsArray8, self.questionsArray9, self.questionsArray10, nil];
     }

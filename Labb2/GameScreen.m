@@ -69,6 +69,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.answ1.layer.cornerRadius = 10;
+    self.answ2.layer.cornerRadius = 10;
+    self.answ3.layer.cornerRadius = 10;
+    self.answ4.layer.cornerRadius = 10;
+    self.continueButton.layer.cornerRadius = 10;
+    self.nextQuestion.layer.cornerRadius = 10;
+    
     self.model = [[GameLogicModel alloc] init];
     self.continueButton.hidden = YES;
     [self generateQuestion:nil];
