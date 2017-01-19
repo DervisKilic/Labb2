@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface GameLogicModel : NSObject
-
--(NSArray*)getData;
+@property (nonatomic) NSString *correctAnswer;
 -(void)setupData;
 -(int)gameRound;
 -(void)newGame;
+-(NSMutableArray*)getQuestion;
 
 @end

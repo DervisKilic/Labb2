@@ -11,18 +11,18 @@
 @interface GameLogicModel ()
 
 @property (nonatomic) NSDictionary *questionsDictionary;
-
 @property (nonatomic) int round;
-@property (nonatomic) int randomQuestion;
+@property (nonatomic) int randomGenerator;
 @property (nonatomic) NSMutableArray *dictionaryValues;
 @property (nonatomic) NSArray *question;
+@property (nonatomic) NSMutableArray *randomizedQuestion;
 
 @end
 
 @implementation GameLogicModel
 
--(NSArray*)getData{
-    return self.question;
+-(NSMutableArray*)getQuestion{
+    return self.randomizedQuestion;
 }
 
 -(int)gameRound{
@@ -51,9 +51,20 @@
     self.dictionaryValues = [NSMutableArray arrayWithArray:[self.questionsDictionary allValues]];
     }
     
-    self.randomQuestion = arc4random() % (self.dictionaryValues.count);
-    self.question = [self.dictionaryValues objectAtIndex:self.randomQuestion];
-    [self.dictionaryValues removeObjectAtIndex:self.randomQuestion];
+    self.randomGenerator = arc4random() % (self.dictionaryValues.count);
+    self.question = [self.dictionaryValues objectAtIndex:self.randomGenerator];
+    [self.dictionaryValues removeObjectAtIndex:self.randomGenerator];
+    
+
+    self.randomizedQuestion = [[self.question mutableCopy] init];
+    [self.randomizedQuestion removeObjectAtIndex:0];
+    self.correctAnswer = [self.randomizedQuestion objectAtIndex:0];
+    
+    
+    
+    for (NSUInteger i = [self.randomizedQuestion count]; i > 1; i--) [self.randomizedQuestion exchangeObjectAtIndex:i - 1 withObjectAtIndex:arc4random_uniform((u_int32_t)i)];
+    
+    [self.randomizedQuestion insertObject:self.question[0] atIndex:0];
     
     self.round++;
 

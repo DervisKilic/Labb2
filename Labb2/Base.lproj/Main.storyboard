@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.76824994842981353" blue="0.65987960480556285" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.89213841623036649" green="0.87353762401937818" blue="0.88047576138196748" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="2zb-vt-rDl" id="NOB-H4-ZiE"/>
@@ -153,7 +153,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.76824994840000005" blue="0.65987960479999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.2199132716873291" green="0.61600592419589439" blue="0.89213841623036649" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="answ1" destination="uHM-75-4OG" id="r3d-Lc-tzL"/>
